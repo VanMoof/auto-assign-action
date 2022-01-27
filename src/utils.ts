@@ -99,7 +99,18 @@ export function chooseUsersFromGroups(
 ): string[] {
   let users: string[] = []
   for (const group in groups) {
-    users = users.concat(chooseUsers(groups[group], desiredNumber, owner))
+    var pendingUsers: string[] = []
+    var hasNonUniqueUsers: boolean = false
+    do {
+      pendingUsers = chooseUsers(groups[group], desiredNumber, owner)
+      for (const user in pendingUsers) {
+        if (users.indexOf(user) > -1) {
+          hasNonUniqueUsers = true
+        }
+      }
+    } while (hasNonUniqueUsers == true)
+  
+    users = users.concat(pendingUsers)
   }
   return users
 }

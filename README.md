@@ -78,7 +78,7 @@ numberOfReviewers: 0
 
 ### Multiple Reviewers List
 
-Add reviewers/assignees to the pull request based on multiple reviewers list.
+Add unique reviewers/assignees to the pull request based on multiple reviewers list.
 
 If you and peers work at the separate office or they work at the separate team by roles like frontend and backend, you might be good to use adding reviewers from each group.
 
