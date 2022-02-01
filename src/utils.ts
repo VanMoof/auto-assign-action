@@ -103,7 +103,7 @@ export function chooseUsersFromGroups(
     var hasNonUniqueUsers: boolean = false
     do {
       pendingUsers = chooseUsers(groups[group], desiredNumber, owner)
-      for (const user in pendingUsers) {
+      for (let user of pendingUsers) {
         hasNonUniqueUsers = (users.indexOf(user) > -1)
       }
     } while (hasNonUniqueUsers == true)
