@@ -104,12 +104,9 @@ export function chooseUsersFromGroups(
     do {
       pendingUsers = chooseUsers(groups[group], desiredNumber, owner)
       for (const user in pendingUsers) {
-        if (users.indexOf(user) > -1) {
-          hasNonUniqueUsers = true
-        }
+        hasNonUniqueUsers = (users.indexOf(user) > -1)
       }
     } while (hasNonUniqueUsers == true)
-  
     users = users.concat(pendingUsers)
   }
   return users
